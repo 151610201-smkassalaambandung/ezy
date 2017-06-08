@@ -24,11 +24,13 @@ Route::get('produk',function(){
 	$d=App\Pengaturan::all();
 	return $b."<br>".$c."<br>".$d;
 });
-// Route::get('pengguna',function(){
-// 	$c=App\Pengguna::all();
-// 	return $c;
-// });
-// Route::get('pengaturan',function(){
-// 	$d=App\Pengaturan::all();
-// 	return $d;
-// });
+Route::get('/test','MyController@percobaan');
+Route::get('/test2','MyController@percobaan2');
+Route::get('/test3','MyController@percobaan3');
+Route::get('/test4','MyController@percobaan4');
+Route::get('/test5','MyController@percobaan5');
+Route::get('/test6','MyController@percobaan6');
+Route::get('/test7','MyController@percobaan7');
+Route::get('/coba/$buah','MyController@percobaan8');
+
+
