@@ -51,11 +51,25 @@ class MyController extends Controller
     	$komputer=['samsung','acer','asuz','lenovo','hp'];
     	return view ('latihan',compact('buah','makhluk','komputer'));
     }
-    public function percobaan8($buah)
+    public function percobaan8($pil,$jenis)
     {
-    	$buah=['Mangga','Jeruk','Apel','Anggur','Durian'];
-    	dd($buah);
+
+    	$camp=['buah'=>['Mangga'=>['import','local'],
+                        'Jeruk'=>['import','local'],
+                        'Apel'=>['import','local']],
+                'binatang'=>['Gajah'=>['sumatra','jawa'],
+                            'Harimau'=>['sumatra','jawa'],
+                            'Kucing'=>['anggora','garong']],
+                'komputer'=>['samsung'=>['pc','monitor'],
+                            'acer'=>['pc','monitor'],
+                            'asus'=>['pc','monitor']]];
+
+    	$param=$camp[$pil];
+        $br=$param[$jenis];
+        return view ('parameter',compact('param','pil','br','jenis'));
     }
+    
+    
 
 
 }
