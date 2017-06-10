@@ -4,10 +4,10 @@
 	<title>Parameter</title>
 </head>
 <body>
-		Daftar : <b> {{$pil}} {{$jenis}} </b>
+		Daftar : <b> {{$data}} {{$data2}} </b>
 		<br>
-		@foreach($br as $data)
-		 <li>{{$data}}</li>
+		@foreach($query as $datas)
+		 <li>{{$datas}}</li>
 		 @endforeach
 </body>
 </html>

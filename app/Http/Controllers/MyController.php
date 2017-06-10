@@ -51,22 +51,28 @@ class MyController extends Controller
     	$komputer=['samsung','acer','asuz','lenovo','hp'];
     	return view ('latihan',compact('buah','makhluk','komputer'));
     }
-    public function percobaan8($pil,$jenis)
+    public function percobaan8($data,$data2 = null)
     {
 
-    	$camp=['buah'=>['Mangga'=>['import','local'],
-                        'Jeruk'=>['import','local'],
-                        'Apel'=>['import','local']],
-                'binatang'=>['Gajah'=>['sumatra','jawa'],
-                            'Harimau'=>['sumatra','jawa'],
-                            'Kucing'=>['anggora','garong']],
-                'komputer'=>['samsung'=>['pc','monitor'],
-                            'acer'=>['pc','monitor'],
-                            'asus'=>['pc','monitor']]];
+    	$array= array('buah'=>['mangga'=>['import','local'],
+                                'jeruk'=>['import','local'],
+                                'apel'=>['import','local']],
 
-    	$param=$camp[$pil];
-        $br=$param[$jenis];
-        return view ('parameter',compact('param','pil','br','jenis'));
+                        'binatang'=>['gajah'=>['sumatra','jawa'],
+                                    'harimau'=>['sumatra','jawa'],
+                                    'kucing'=>['anggora','garong']],
+
+                        'komputer'=>['samsung'=>['pc','monitor'],
+                                    'acer'=>['pc','monitor'],
+                                    'asus'=>['pc','monitor']]);
+
+    	if ($data){
+            $query = (array_keys($array[$data]));
+        }
+        if ($data2){
+            $query = ($array[$data][$data2]);
+        }
+        return view ('parameter',compact('query','data','data2'));
     }
     
     
